@@ -3,7 +3,7 @@ import { AddShoppingCart } from '@material-ui/icons'
 import useStyles from './styles'
 
 // membuat layout spesifik untuk jenis produk
-function Product({product}) {
+function Product({ product, onAddToCart }) {
   const classes = useStyles()
 
   return (
@@ -21,7 +21,7 @@ function Product({product}) {
         <Typography variant='body2' color='textSecondary' dangerouslySetInnerHTML={{__html: product.description}} />
       </CardContent>
       <CardActions disableSpacing className={classes.cardActions}>
-        <IconButton aria-label="Add to cart">
+        <IconButton aria-label="Add to cart" onClick={() => onAddToCart(product.id, 1)}>
           <AddShoppingCart />
         </IconButton>
       </CardActions>
