@@ -2,9 +2,7 @@ import {
   AppBar, 
   Toolbar, 
   IconButton, 
-  Badge, 
-  MenuItem, 
-  Menu, 
+  Badge,
   Typography 
 } from '@material-ui/core'
 import { ShoppingCart } from '@material-ui/icons'
