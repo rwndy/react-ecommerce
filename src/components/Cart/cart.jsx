@@ -4,7 +4,7 @@ import useStyles from './styles'
 import { Link } from 'react-router-dom'
 
 
-const Cart = ({ carts }) => {
+const Cart = ({ carts, handleUpdateToCart, handleRemoveToCart, handleEmptyToChart }) => {
   const classes = useStyles()
  
   const EmptyCart = () => (
@@ -20,7 +20,7 @@ const Cart = ({ carts }) => {
         {
           carts.line_items.map(cart => (
             <Grid item xs={12} sm={4} key={cart.id}>
-              <CartItem item={cart}/>
+              <CartItem item={cart} onRemoveCart={handleRemoveToCart} onUpdateCart={handleUpdateToCart} />
             </Grid>
           ))
         }
@@ -30,7 +30,7 @@ const Cart = ({ carts }) => {
           Subtotal: { carts.subtotal.formatted_with_symbol }
         </Typography>
         <div>
-          <Button className={classes.emptyButton} size="large" type="button" variant="contained" color="secondary">Empty Cart</Button>
+          <Button className={classes.emptyButton} size="large" type="button" variant="contained" color="secondary" onClick={handleEmptyToChart}>Empty Cart</Button>
           <Button className={classes.checkoutButton} size="large" type="button" variant="contained" color="primary">Checkout</Button>
         </div>
       </div>
