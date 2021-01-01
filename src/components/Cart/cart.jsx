@@ -31,7 +31,7 @@ const Cart = ({ carts, handleUpdateToCart, handleRemoveToCart, handleEmptyToChar
         </Typography>
         <div>
           <Button className={classes.emptyButton} size="large" type="button" variant="contained" color="secondary" onClick={handleEmptyToChart}>Empty Cart</Button>
-          <Button className={classes.checkoutButton} size="large" type="button" variant="contained" color="primary">Checkout</Button>
+          <Button component={Link} to='/checkout' className={classes.checkoutButton} size="large" type="button" variant="contained" color="primary">Checkout</Button>
         </div>
       </div>
     </>
